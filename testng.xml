@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name ="DAny's Gopher">
+
+<suite-files>
+
+
+<suite-file path="./SmokeTest.xml"/>
+
+
+</suite-files>
+</suite>

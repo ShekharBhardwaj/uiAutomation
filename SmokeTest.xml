@@ -1,0 +1,41 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name=" Smoke Suite">
+
+
+
+
+<test name="Google Search Test1">
+    <classes>
+        <class name="com.happiestmind.automation.TestCases.GoogleSearchTest" ></class>  
+    </classes>
+</test>
+<test name="Google Search Test2">
+    <classes>
+        <class name="com.happiestmind.automation.TestCases.GoogleSearchTest" ></class>  
+    </classes>
+</test>
+<test name="Google Search Test3">
+    <classes>
+        <class name="com.happiestmind.automation.TestCases.GoogleSearchTest" ></class>  
+    </classes>
+</test>
+<test name="Google Search Test4">
+    <classes>
+        <class name="com.happiestmind.automation.TestCases.GoogleSearchTest" ></class>  
+    </classes>
+</test>
+<test name="Google Search Test5">
+    <classes>
+        <class name="com.happiestmind.automation.TestCases.GoogleSearchTest" ></class>  
+    </classes>
+</test>
+<test name="Google Search Test6">
+    <classes>
+        <class name="com.happiestmind.automation.TestCases.GoogleSearchTest" ></class>  
+    </classes>
+</test>
+
+
+
+</suite>
+

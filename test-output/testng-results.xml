@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="DAny&#039;s Gopher" duration-ms="0" started-at="2017-05-05T06:02:12Z" finished-at="2017-05-05T06:02:12Z">
+    <groups>
+    </groups>
+  </suite> <!-- DAny's Gopher -->
+  <suite name=" Smoke Suite" duration-ms="33583" started-at="2017-05-05T06:01:38Z" finished-at="2017-05-05T06:02:12Z">
+    <groups>
+    </groups>
+    <test name="Google Search Test1" duration-ms="5858" started-at="2017-05-05T06:01:38Z" finished-at="2017-05-05T06:01:44Z">
+      <class name="com.happiestmind.automation.TestCases.GoogleSearchTest">
+        <test-method status="PASS" signature="searchGoogle()[pri:0, instance:com.happiestmind.automation.TestCases.GoogleSearchTest@6f7fd0e6]" name="searchGoogle" duration-ms="5846" started-at="2017-05-05T02:01:38Z" finished-at="2017-05-05T02:01:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchGoogle -->
+      </class> <!-- com.happiestmind.automation.TestCases.GoogleSearchTest -->
+    </test> <!-- Google Search Test1 -->
+    <test name="Google Search Test2" duration-ms="5431" started-at="2017-05-05T06:01:44Z" finished-at="2017-05-05T06:01:50Z">
+      <class name="com.happiestmind.automation.TestCases.GoogleSearchTest">
+        <test-method status="PASS" signature="searchGoogle()[pri:0, instance:com.happiestmind.automation.TestCases.GoogleSearchTest@146ba0ac]" name="searchGoogle" duration-ms="5429" started-at="2017-05-05T02:01:44Z" finished-at="2017-05-05T02:01:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchGoogle -->
+      </class> <!-- com.happiestmind.automation.TestCases.GoogleSearchTest -->
+    </test> <!-- Google Search Test2 -->
+    <test name="Google Search Test3" duration-ms="5601" started-at="2017-05-05T06:01:50Z" finished-at="2017-05-05T06:01:55Z">
+      <class name="com.happiestmind.automation.TestCases.GoogleSearchTest">
+        <test-method status="PASS" signature="searchGoogle()[pri:0, instance:com.happiestmind.automation.TestCases.GoogleSearchTest@3abbfa04]" name="searchGoogle" duration-ms="5599" started-at="2017-05-05T02:01:50Z" finished-at="2017-05-05T02:01:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchGoogle -->
+      </class> <!-- com.happiestmind.automation.TestCases.GoogleSearchTest -->
+    </test> <!-- Google Search Test3 -->
+    <test name="Google Search Test4" duration-ms="5396" started-at="2017-05-05T06:01:55Z" finished-at="2017-05-05T06:02:01Z">
+      <class name="com.happiestmind.automation.TestCases.GoogleSearchTest">
+        <test-method status="PASS" signature="searchGoogle()[pri:0, instance:com.happiestmind.automation.TestCases.GoogleSearchTest@553f17c]" name="searchGoogle" duration-ms="5395" started-at="2017-05-05T02:01:55Z" finished-at="2017-05-05T02:02:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchGoogle -->
+      </class> <!-- com.happiestmind.automation.TestCases.GoogleSearchTest -->
+    </test> <!-- Google Search Test4 -->
+    <test name="Google Search Test5" duration-ms="5711" started-at="2017-05-05T06:02:01Z" finished-at="2017-05-05T06:02:06Z">
+      <class name="com.happiestmind.automation.TestCases.GoogleSearchTest">
+        <test-method status="PASS" signature="searchGoogle()[pri:0, instance:com.happiestmind.automation.TestCases.GoogleSearchTest@59ec2012]" name="searchGoogle" duration-ms="5710" started-at="2017-05-05T02:02:01Z" finished-at="2017-05-05T02:02:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchGoogle -->
+      </class> <!-- com.happiestmind.automation.TestCases.GoogleSearchTest -->
+    </test> <!-- Google Search Test5 -->
+    <test name="Google Search Test6" duration-ms="5571" started-at="2017-05-05T06:02:06Z" finished-at="2017-05-05T06:02:12Z">
+      <class name="com.happiestmind.automation.TestCases.GoogleSearchTest">
+        <test-method status="PASS" signature="searchGoogle()[pri:0, instance:com.happiestmind.automation.TestCases.GoogleSearchTest@5700d6b1]" name="searchGoogle" duration-ms="5570" started-at="2017-05-05T02:02:06Z" finished-at="2017-05-05T02:02:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchGoogle -->
+      </class> <!-- com.happiestmind.automation.TestCases.GoogleSearchTest -->
+    </test> <!-- Google Search Test6 -->
+  </suite> <!--  Smoke Suite -->
+</testng-results>
