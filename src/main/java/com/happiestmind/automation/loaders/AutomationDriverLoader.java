@@ -1,15 +1,13 @@
-package com.happiestmind.automation.driverloader;
+package com.happiestmind.automation.loaders;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 
 import org.apache.log4j.Logger;
 
-import com.happiestmind.automation.util.PropertiesLoader;
-
-public class LoadAutomationDriver {
+public class AutomationDriverLoader {
 	
-	final static Logger LOG = Logger.getLogger(LoadAutomationDriver.class);
+	final static Logger LOG = Logger.getLogger(AutomationDriverLoader.class);
 
 	public static String loadGeckoDriver() throws IOException, URISyntaxException {
 		String uri;

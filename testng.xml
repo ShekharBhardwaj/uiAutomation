@@ -1,11 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name ="DAny's Gopher">
-
-<suite-files>
-
-
-<suite-file path="./SmokeTest.xml"/>
-
-
-</suite-files>
+<suite name="Parent Test Suite">
+	<listeners>
+		<listener class-name="com.happiestmind.automation.adapters.TestListenerAdapter" />
+		<listener class-name="com.happiestmind.automation.adapters.AbstractReportAdapter" />
+	</listeners>
+	<suite-files>
+		<suite-file path="./SmokeTest_1_0.xml" />
+	</suite-files>
 </suite>

@@ -8,21 +8,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.FluentWait;
 
+import com.happiestmind.automation.loaders.PropertiesLoader;
+
 public class MiscUtils {
 	
 	
 	final static Logger LOG = Logger.getLogger(MiscUtils.class);
-
-	/**
-	 * 
-	 * @param driver
-	 */
-	public static void driverWait(WebDriver driver) {
-
-		new FluentWait<WebDriver>(driver).withTimeout(30, TimeUnit.SECONDS).pollingEvery(200, TimeUnit.MILLISECONDS)
-				.ignoring(NoSuchElementException.class);
-
-	}
 
 	/**
 	 * 

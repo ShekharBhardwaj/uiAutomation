@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name=" Smoke Suite 1.0">
+
+	<test name="Google Search Test1">
+		<classes>
+			<class name="com.happiestmind.automation.suite.smoke.GoogleSearchTest"></class>
+		</classes>
+	</test>
+
+
+
+</suite>
+
