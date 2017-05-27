@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import com.happiestmind.automation.util.MiscUtils;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 
 public class GoogleSearchPage {
 
@@ -19,14 +21,16 @@ public class GoogleSearchPage {
 	@FindBy(how = How.NAME, using = "q")
 	WebElement searchBox;
 
-	@FindBy(how = How.NAME, using = "btnK")
+	@FindBy(how = How.ID, using = "_fZl")
 	WebElement searchButton;
 
-	public void search(String searchText) throws InterruptedException {
-		MiscUtils.isElementPresent(searchBox, driver);
+	public void search(String searchText , ExtentTest extentLogger, ExtentReports extent, String step) throws Exception  {
+		MiscUtils.isElementPresent(searchBox, driver, extentLogger, extent, step);
 		searchBox.sendKeys(searchText);
-		/*MiscUtils.isElementPresent(searchButton, driver);
-		searchButton.click();*/
+
+		MiscUtils.isElementPresent(searchButton, driver, extentLogger, extent, step);
+		searchButton.click();
+
 	}
 
 }

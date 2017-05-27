@@ -9,10 +9,11 @@
     <classes>
       <class name="com.happiestmind.automation.suite.smoke.GoogleSearchTest">
         <methods>
+          <include name="googleSerahcTest"/>
           <include name="checkSuiteSkip"/>
+          <include name="closeConnections"/>
           <include name="reportTestResult"/>
           <include name="checkTestSkip"/>
-          <include name="testcaseA1"/>
           <include name="reportDataSetResult"/>
         </methods>
       </class> <!-- com.happiestmind.automation.suite.smoke.GoogleSearchTest -->

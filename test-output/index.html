@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-_Smoke_Suite_1.0">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-_Smoke_Suite_1.0" title="com.happiestmind.automation.suite.smoke.GoogleSearchTest" hash-for-method="testcaseA1(Chrome, http://google.com, hello world, not Google)">testcaseA1(Chrome, http://google.com, hello world, not Google)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-_Smoke_Suite_1.0" title="com.happiestmind.automation.suite.smoke.GoogleSearchTest" hash-for-method="googleSerahcTest(Chrome, http://google.com, hello world, not Google)">googleSerahcTest(Chrome, http://google.com, hello world, not Google)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-_Smoke_Suite_1.0 -->
@@ -116,7 +116,7 @@
                     <div class="method-list-content passed suite-_Smoke_Suite_1.0">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-_Smoke_Suite_1.0" title="com.happiestmind.automation.suite.smoke.GoogleSearchTest" hash-for-method="testcaseA1(Chrome, http://google.com, hello world, Google)">testcaseA1(Chrome, http://google.com, hello world, Google)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-_Smoke_Suite_1.0" title="com.happiestmind.automation.suite.smoke.GoogleSearchTest" hash-for-method="googleSerahcTest(Chrome, http://google.com, hello world, Google)">googleSerahcTest(Chrome, http://google.com, hello world, Google)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-_Smoke_Suite_1.0 -->
@@ -139,13 +139,14 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testcaseA1(Chrome, http://google.com, hello world, not Google)">
-                  </a> <!-- testcaseA1(Chrome, http://google.com, hello world, not Google) -->
-                  <span class="method-name">testcaseA1</span>
+                  <a name="googleSerahcTest(Chrome, http://google.com, hello world, not Google)">
+                  </a> <!-- googleSerahcTest(Chrome, http://google.com, hello world, not Google) -->
+                  <span class="method-name">googleSerahcTest</span>
                   <span class="parameters">(Chrome, http://google.com, hello world, not Google)</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [Google] but found [not Google]
-	at com.happiestmind.automation.suite.smoke.GoogleSearchTest.testcaseA1(GoogleSearchTest.java:73)
-... Removed 32 stack frames
+                  <div class="stack-trace">java.lang.AssertionError: expected [not Google] but found [Google]
+	at com.happiestmind.automation.util.MiscUtils.assertion(MiscUtils.java:181)
+	at com.happiestmind.automation.suite.smoke.GoogleSearchTest.googleSerahcTest(GoogleSearchTest.java:79)
+... Removed 31 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -159,9 +160,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testcaseA1(Chrome, http://google.com, hello world, Google)">
-                  </a> <!-- testcaseA1(Chrome, http://google.com, hello world, Google) -->
-                  <span class="method-name">testcaseA1</span>
+                  <a name="googleSerahcTest(Chrome, http://google.com, hello world, Google)">
+                  </a> <!-- googleSerahcTest(Chrome, http://google.com, hello world, Google) -->
+                  <span class="method-name">googleSerahcTest</span>
                   <span class="parameters">(Chrome, http://google.com, hello world, Google)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -172,7 +173,7 @@
         </div> <!-- panel Parent_Test_Suite -->
         <div panel-name="test-xml-_Smoke_Suite_1.0" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/Shekhar/Documents/workspace/uiAutomation/SmokeTest_1_0.xml</span>
+            <span class="header-content">/kappa/uiAutomation/SmokeTest_1_0.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -194,7 +195,7 @@
         </div> <!-- panel -->
         <div panel-name="test-xml-Parent_Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/Shekhar/Documents/workspace/uiAutomation/testng.xml</span>
+            <span class="header-content">/kappa/uiAutomation/testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -263,18 +264,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testcaseA1')
+data.setCell(0, 1, 'googleSerahcTest')
 data.setCell(0, 2, 'com.happiestmind.automation.suite.smoke.GoogleSearchTest')
-data.setCell(0, 3, 7256);
+data.setCell(0, 3, 6796);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testcaseA1')
+data.setCell(1, 1, 'googleSerahcTest')
 data.setCell(1, 2, 'com.happiestmind.automation.suite.smoke.GoogleSearchTest')
-data.setCell(1, 3, 6860);
+data.setCell(1, 3, 6642);
 window.suiteTableData['_Smoke_Suite_1.0']= { tableData: data, tableDiv: 'times-div-_Smoke_Suite_1.0'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 13 seconds</span>
               <div id="times-div-_Smoke_Suite_1.0">
               </div> <!-- times-div-_Smoke_Suite_1.0 -->
             </div> <!-- times-div -->
@@ -345,30 +346,34 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">checkTestSkip</span>
-                <span class="method-start">470 ms</span>
+                <span class="method-start">597 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">testcaseA1(Chrome, http://google.com, hello world, Google)</span>
-                <span class="method-start">484 ms</span>
+                <span class="method-name">googleSerahcTest(Chrome, http://google.com, hello world, Google)</span>
+                <span class="method-start">668 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">reportDataSetResult</span>
-                <span class="method-start">7742 ms</span>
+                <span class="method-name">reportDataSetResult([TestResult name=googleSerahcTest status=SUCCESS method=GoogleSearchTest.googleSerahcTest(java.lang....)</span>
+                <span class="method-start">7467 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">testcaseA1(Chrome, http://google.com, hello world, not Google)</span>
-                <span class="method-start">9019 ms</span>
+                <span class="method-name">googleSerahcTest(Chrome, http://google.com, hello world, not Google)</span>
+                <span class="method-start">9011 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">reportDataSetResult</span>
-                <span class="method-start">15881 ms</span>
+                <span class="method-name">reportDataSetResult([TestResult name=googleSerahcTest status=FAILURE method=GoogleSearchTest.googleSerahcTest(java.lang....)</span>
+                <span class="method-start">15657 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">reportTestResult</span>
-                <span class="method-start">15917 ms</span>
+                <span class="method-start">15710 ms</span>
               </div> <!-- configuration-test after -->
+              <div class="configuration-suite after">
+                <span class="method-name">closeConnections</span>
+                <span class="method-start">15965 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Parent_Test_Suite" class="panel">
