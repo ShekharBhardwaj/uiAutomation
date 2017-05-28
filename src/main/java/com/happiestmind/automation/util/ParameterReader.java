@@ -20,6 +20,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import com.happiestmind.automation.exception.ParameterReaderCustomException;
+
 public class ParameterReader {
 
 	final static Logger LOG = Logger.getLogger(ParameterReader.class);
@@ -34,8 +36,9 @@ public class ParameterReader {
 	/***
 	 * 
 	 * @param path
+	 * @throws Exception 
 	 */
-	public ParameterReader(String path) {
+	public ParameterReader(String path) throws Exception {
 
 		this.path = path;
 		try {
@@ -45,8 +48,9 @@ public class ParameterReader {
 			sheet = workbook.getSheetAt(0);
 			fis.close();
 		} catch (Exception e) {
-			LOG.info("Error in Initializing xlsx file path : " + path);
-			e.printStackTrace();
+			LOG.error("Error in Initializing xlsx file path : " + path);
+			LOG.fatal("Fatal error during xlsx file path init. test run may stop fully due to above given error");
+			throw new ParameterReaderCustomException(path, e);
 		}
 
 	}
@@ -78,8 +82,9 @@ public class ParameterReader {
 	 * @param colName
 	 * @param rowNum
 	 * @return
+	 * @throws ParameterReaderCustomException 
 	 */
-	public String getCellData(String sheetName, String colName, int rowNum) {
+	public String getCellData(String sheetName, String colName, int rowNum) throws ParameterReaderCustomException {
 		try {
 			if (rowNum <= 0)
 				return "";
@@ -128,9 +133,8 @@ public class ParameterReader {
 				return String.valueOf(cell.getBooleanCellValue());
 
 		} catch (Exception e) {
-
-			e.printStackTrace();
-			return "row " + rowNum + " or column " + colName + " does not exist in xls";
+			
+			throw new ParameterReaderCustomException("row " + rowNum + " or column " + colName + " does not exist in xls");
 		}
 	}
 
@@ -528,7 +532,7 @@ public class ParameterReader {
 		return true;
 	}
 
-	public int getCellRowNum(String sheetName, String colName, String cellValue) {
+	public int getCellRowNum(String sheetName, String colName, String cellValue) throws ParameterReaderCustomException {
 
 		for (int i = 2; i <= getRowCount(sheetName); i++) {
 			if (getCellData(sheetName, colName, i).equalsIgnoreCase(cellValue)) {

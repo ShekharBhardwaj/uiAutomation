@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [ Smoke Suite 1.0 (0)]">
+  <listeners>
+    <listener class-name="com.happiestmind.automation.adapters.TestListenerAdapter"/>
+    <listener class-name="com.happiestmind.automation.adapters.AbstractReportAdapter"/>
+  </listeners>
+  <test name="Google Search Test1(failed)">
+    <classes>
+      <class name="com.happiestmind.automation.suite.smoke.GoogleSearchTest">
+        <methods>
+          <include name="checkSuiteSkip"/>
+          <include name="closeConnections"/>
+          <include name="reportTestResult"/>
+          <include name="checkTestSkip"/>
+          <include name="googleSearchTest" invocation-numbers="0 1"/>
+          <include name="reportDataSetResult"/>
+        </methods>
+      </class> <!-- com.happiestmind.automation.suite.smoke.GoogleSearchTest -->
+    </classes>
+  </test> <!-- Google Search Test1(failed) -->
+</suite> <!-- Failed suite [ Smoke Suite 1.0 (0)] -->

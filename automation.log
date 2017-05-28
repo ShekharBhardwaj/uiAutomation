@@ -1,0 +1,216 @@
+2017-05-28 01:57:11 INFO  XlsSheetsLoader:23 - Initializing data xlsx files for data provider.
+2017-05-28 01:57:11 INFO  PropertiesLoader:23 - Loading properties from : /kappa/uiAutomation/src/main/resources/config.properties
+2017-05-28 01:57:11 INFO  ParameterReader:45 - Initializing xlsx file path : /kappa/uiAutomation/src/test/resources/com/happiestmind/data/SmokeTests.xlsx
+2017-05-28 01:57:11 INFO  ParameterReader:45 - Initializing xlsx file path : /kappa/uiAutomation/src/test/resources/com/happiestmind/data/RegressionTests.xlsx
+2017-05-28 01:57:12 INFO  ParameterReader:45 - Initializing xlsx file path : /kappa/uiAutomation/src/test/resources/com/happiestmind/data/Suite.xlsx
+2017-05-28 01:57:12 INFO  TestUtil:21 - Checking if suite : SmokeTests is available for execution.
+2017-05-28 01:57:12 INFO  TestUtil:26 - Suite : SmokeTests is available for execution.
+2017-05-28 01:57:12 INFO  TestUtil:50 - Checking if Test Case : GoogleSearchTest is available for execution.
+2017-05-28 01:57:12 INFO  TestUtil:54 - Test Case : GoogleSearchTest is available for execution.
+2017-05-28 01:57:12 INFO  AutomationDataProvider:25 - Providing data for: GoogleSearchTest
+2017-05-28 01:57:12 INFO  GoogleSearchTest:71 -  Executing : GoogleSearchTest
+2017-05-28 01:57:12 INFO  GoogleSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 01:57:12 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 01:57:12 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 01:57:12 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 01:57:18 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 01:57:20 INFO  GoogleSearchTest:71 -  Executing : GoogleSearchTest
+2017-05-28 01:57:20 INFO  GoogleSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 01:57:20 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 01:57:20 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 01:57:20 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 01:57:25 INFO  ErrorHandler:19 - *************addVerificationFailure******************
+2017-05-28 01:57:25 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 01:57:25 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 01:57:25 ERROR TestListenerAdapter:30 - Test Failed, Setting Test Result to FAILED
+2017-05-28 01:57:25 INFO  TestUtil:21 - Checking if suite : RegressionTests is available for execution.
+2017-05-28 01:57:25 INFO  TestUtil:26 - Suite : RegressionTests is available for execution.
+2017-05-28 01:57:25 INFO  TestUtil:50 - Checking if Test Case : RegressionSearchTest is available for execution.
+2017-05-28 01:57:25 INFO  TestUtil:54 - Test Case : RegressionSearchTest is available for execution.
+2017-05-28 01:57:25 INFO  AutomationDataProvider:25 - Providing data for: RegressionSearchTest
+2017-05-28 01:57:25 INFO  RegressionSearchTest:71 -  Executing : RegressionSearchTest
+2017-05-28 01:57:25 INFO  RegressionSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 01:57:25 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 01:57:25 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 01:57:25 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 01:57:30 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 01:57:30 INFO  RegressionSearchTest:71 -  Executing : RegressionSearchTest
+2017-05-28 01:57:30 INFO  RegressionSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 01:57:30 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 01:57:30 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 01:57:30 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 01:57:36 INFO  ErrorHandler:19 - *************addVerificationFailure******************
+2017-05-28 01:57:36 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 01:57:36 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 01:57:36 ERROR TestListenerAdapter:30 - Test Failed, Setting Test Result to FAILED
+2017-05-28 01:57:36 INFO  AbstractReportAdapter:19 - *****Abstract Report******
+2017-05-28 01:57:36 INFO  AbstractReportAdapter:28 - Passed tests for suite ' Smoke Suite 1.0' is:1
+2017-05-28 01:57:36 INFO  AbstractReportAdapter:30 - Failed tests for suite ' Smoke Suite 1.0' is:1
+2017-05-28 01:57:36 INFO  AbstractReportAdapter:32 - Skipped tests for suite ' Smoke Suite 1.0' is:0
+2017-05-28 01:57:36 INFO  AbstractReportAdapter:34 - *****End of Report******
+2017-05-28 01:57:36 INFO  AbstractReportAdapter:28 - Passed tests for suite ' Regression 1.0' is:1
+2017-05-28 01:57:36 INFO  AbstractReportAdapter:30 - Failed tests for suite ' Regression 1.0' is:1
+2017-05-28 01:57:36 INFO  AbstractReportAdapter:32 - Skipped tests for suite ' Regression 1.0' is:0
+2017-05-28 01:57:36 INFO  AbstractReportAdapter:34 - *****End of Report******
+2017-05-28 02:02:14 INFO  XlsSheetsLoader:23 - Initializing data xlsx files for data provider.
+2017-05-28 02:02:14 INFO  PropertiesLoader:23 - Loading properties from : /kappa/uiAutomation/src/main/resources/config.properties
+2017-05-28 02:02:14 INFO  ParameterReader:45 - Initializing xlsx file path : /kappa/uiAutomation/src/test/resources/com/happiestmind/data/SmokeTests.xlsx
+2017-05-28 02:02:14 INFO  ParameterReader:45 - Initializing xlsx file path : /kappa/uiAutomation/src/test/resources/com/happiestmind/data/RegressionTests.xlsx
+2017-05-28 02:02:14 INFO  ParameterReader:45 - Initializing xlsx file path : /kappa/uiAutomation/src/test/resources/com/happiestmind/data/Suite.xlsx
+2017-05-28 02:02:14 INFO  TestUtil:21 - Checking if suite : SmokeTests is available for execution.
+2017-05-28 02:02:14 INFO  TestUtil:26 - Suite : SmokeTests is available for execution.
+2017-05-28 02:02:14 INFO  TestUtil:50 - Checking if Test Case : GoogleSearchTest is available for execution.
+2017-05-28 02:02:14 INFO  TestUtil:54 - Test Case : GoogleSearchTest is available for execution.
+2017-05-28 02:02:14 INFO  AutomationDataProvider:25 - Providing data for: GoogleSearchTest
+2017-05-28 02:02:14 INFO  GoogleSearchTest:71 -  Executing : GoogleSearchTest
+2017-05-28 02:02:14 INFO  GoogleSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 02:02:14 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 02:02:14 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 02:02:14 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 02:02:20 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:02:21 INFO  GoogleSearchTest:71 -  Executing : GoogleSearchTest
+2017-05-28 02:02:21 INFO  GoogleSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 02:02:21 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 02:02:21 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 02:02:21 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 02:02:26 INFO  ErrorHandler:19 - *************addVerificationFailure******************
+2017-05-28 02:02:26 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:02:26 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:02:26 ERROR TestListenerAdapter:30 - Test Failed, Setting Test Result to FAILED
+2017-05-28 02:02:26 INFO  TestUtil:21 - Checking if suite : RegressionTests is available for execution.
+2017-05-28 02:02:26 INFO  TestUtil:26 - Suite : RegressionTests is available for execution.
+2017-05-28 02:02:26 INFO  TestUtil:50 - Checking if Test Case : RegressionSearchTest is available for execution.
+2017-05-28 02:02:26 INFO  TestUtil:54 - Test Case : RegressionSearchTest is available for execution.
+2017-05-28 02:02:26 INFO  AutomationDataProvider:25 - Providing data for: RegressionSearchTest
+2017-05-28 02:02:26 INFO  RegressionSearchTest:71 -  Executing : RegressionSearchTest
+2017-05-28 02:02:26 INFO  RegressionSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 02:02:26 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 02:02:26 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 02:02:26 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 02:02:31 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:02:31 INFO  RegressionSearchTest:71 -  Executing : RegressionSearchTest
+2017-05-28 02:02:31 INFO  RegressionSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 02:02:31 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 02:02:31 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 02:02:31 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 02:02:36 INFO  ErrorHandler:19 - *************addVerificationFailure******************
+2017-05-28 02:02:36 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:02:36 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:02:36 ERROR TestListenerAdapter:30 - Test Failed, Setting Test Result to FAILED
+2017-05-28 02:02:36 INFO  AbstractReportAdapter:19 - *****Abstract Report******
+2017-05-28 02:02:36 INFO  AbstractReportAdapter:28 - Passed tests for suite ' Smoke Suite 1.0' is:1
+2017-05-28 02:02:36 INFO  AbstractReportAdapter:30 - Failed tests for suite ' Smoke Suite 1.0' is:1
+2017-05-28 02:02:36 INFO  AbstractReportAdapter:32 - Skipped tests for suite ' Smoke Suite 1.0' is:0
+2017-05-28 02:02:36 INFO  AbstractReportAdapter:34 - *****End of Report******
+2017-05-28 02:02:36 INFO  AbstractReportAdapter:28 - Passed tests for suite ' Regression 1.0' is:1
+2017-05-28 02:02:36 INFO  AbstractReportAdapter:30 - Failed tests for suite ' Regression 1.0' is:1
+2017-05-28 02:02:36 INFO  AbstractReportAdapter:32 - Skipped tests for suite ' Regression 1.0' is:0
+2017-05-28 02:02:36 INFO  AbstractReportAdapter:34 - *****End of Report******
+2017-05-28 02:03:58 INFO  XlsSheetsLoader:23 - Initializing data xlsx files for data provider.
+2017-05-28 02:03:58 INFO  PropertiesLoader:23 - Loading properties from : /kappa/uiAutomation/src/main/resources/config.properties
+2017-05-28 02:03:58 INFO  ParameterReader:45 - Initializing xlsx file path : /kappa/uiAutomation/src/test/resources/com/happiestmind/data/SmokeTests.xlsx
+2017-05-28 02:03:58 INFO  ParameterReader:45 - Initializing xlsx file path : /kappa/uiAutomation/src/test/resources/com/happiestmind/data/RegressionTests.xlsx
+2017-05-28 02:03:58 INFO  ParameterReader:45 - Initializing xlsx file path : /kappa/uiAutomation/src/test/resources/com/happiestmind/data/Suite.xlsx
+2017-05-28 02:03:58 INFO  TestUtil:21 - Checking if suite : SmokeTests is available for execution.
+2017-05-28 02:03:58 INFO  TestUtil:26 - Suite : SmokeTests is available for execution.
+2017-05-28 02:03:58 INFO  TestUtil:50 - Checking if Test Case : GoogleSearchTest is available for execution.
+2017-05-28 02:03:58 INFO  TestUtil:54 - Test Case : GoogleSearchTest is available for execution.
+2017-05-28 02:03:58 INFO  AutomationDataProvider:25 - Providing data for: GoogleSearchTest
+2017-05-28 02:03:58 INFO  GoogleSearchTest:71 -  Executing : GoogleSearchTest
+2017-05-28 02:03:58 INFO  GoogleSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 02:03:58 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 02:03:58 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 02:03:58 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 02:04:03 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:04:05 INFO  GoogleSearchTest:71 -  Executing : GoogleSearchTest
+2017-05-28 02:04:05 INFO  GoogleSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 02:04:05 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 02:04:05 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 02:04:05 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 02:04:10 INFO  ErrorHandler:19 - *************addVerificationFailure******************
+2017-05-28 02:04:10 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:04:10 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:04:10 ERROR TestListenerAdapter:30 - Test Failed, Setting Test Result to FAILED
+2017-05-28 02:04:10 INFO  TestUtil:21 - Checking if suite : RegressionTests is available for execution.
+2017-05-28 02:04:10 INFO  TestUtil:26 - Suite : RegressionTests is available for execution.
+2017-05-28 02:04:10 INFO  TestUtil:50 - Checking if Test Case : RegressionSearchTest is available for execution.
+2017-05-28 02:04:10 INFO  TestUtil:54 - Test Case : RegressionSearchTest is available for execution.
+2017-05-28 02:04:10 INFO  AutomationDataProvider:25 - Providing data for: RegressionSearchTest
+2017-05-28 02:04:10 INFO  RegressionSearchTest:71 -  Executing : RegressionSearchTest
+2017-05-28 02:04:10 INFO  RegressionSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 02:04:10 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 02:04:10 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 02:04:10 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 02:04:15 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:04:15 INFO  RegressionSearchTest:71 -  Executing : RegressionSearchTest
+2017-05-28 02:04:15 INFO  RegressionSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 02:04:15 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 02:04:15 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 02:04:15 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 02:04:20 INFO  ErrorHandler:19 - *************addVerificationFailure******************
+2017-05-28 02:04:20 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:04:20 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:04:20 ERROR TestListenerAdapter:30 - Test Failed, Setting Test Result to FAILED
+2017-05-28 02:04:20 INFO  AbstractReportAdapter:19 - *****Abstract Report******
+2017-05-28 02:04:20 INFO  AbstractReportAdapter:28 - Passed tests for suite ' Smoke Suite 1.0' is:1
+2017-05-28 02:04:20 INFO  AbstractReportAdapter:30 - Failed tests for suite ' Smoke Suite 1.0' is:1
+2017-05-28 02:04:20 INFO  AbstractReportAdapter:32 - Skipped tests for suite ' Smoke Suite 1.0' is:0
+2017-05-28 02:04:20 INFO  AbstractReportAdapter:34 - *****End of Report******
+2017-05-28 02:04:20 INFO  AbstractReportAdapter:28 - Passed tests for suite ' Regression 1.0' is:1
+2017-05-28 02:04:20 INFO  AbstractReportAdapter:30 - Failed tests for suite ' Regression 1.0' is:1
+2017-05-28 02:04:20 INFO  AbstractReportAdapter:32 - Skipped tests for suite ' Regression 1.0' is:0
+2017-05-28 02:04:20 INFO  AbstractReportAdapter:34 - *****End of Report******
+2017-05-28 02:06:15 INFO  XlsSheetsLoader:23 - Initializing data xlsx files for data provider.
+2017-05-28 02:06:15 INFO  PropertiesLoader:23 - Loading properties from : /kappa/uiAutomation/src/main/resources/config.properties
+2017-05-28 02:06:15 INFO  ParameterReader:45 - Initializing xlsx file path : /kappa/uiAutomation/src/test/resources/com/happiestmind/data/SmokeTests.xlsx
+2017-05-28 02:06:15 INFO  ParameterReader:45 - Initializing xlsx file path : /kappa/uiAutomation/src/test/resources/com/happiestmind/data/RegressionTests.xlsx
+2017-05-28 02:06:15 INFO  ParameterReader:45 - Initializing xlsx file path : /kappa/uiAutomation/src/test/resources/com/happiestmind/data/Suite.xlsx
+2017-05-28 02:06:15 INFO  TestUtil:21 - Checking if suite : SmokeTests is available for execution.
+2017-05-28 02:06:15 INFO  TestUtil:26 - Suite : SmokeTests is available for execution.
+2017-05-28 02:06:15 INFO  TestUtil:50 - Checking if Test Case : GoogleSearchTest is available for execution.
+2017-05-28 02:06:15 INFO  TestUtil:54 - Test Case : GoogleSearchTest is available for execution.
+2017-05-28 02:06:15 INFO  AutomationDataProvider:25 - Providing data for: GoogleSearchTest
+2017-05-28 02:06:15 INFO  GoogleSearchTest:71 -  Executing : GoogleSearchTest
+2017-05-28 02:06:15 INFO  GoogleSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 02:06:15 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 02:06:15 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 02:06:15 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 02:06:20 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:06:22 INFO  GoogleSearchTest:71 -  Executing : GoogleSearchTest
+2017-05-28 02:06:22 INFO  GoogleSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 02:06:22 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 02:06:22 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 02:06:22 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 02:06:26 INFO  ErrorHandler:19 - *************addVerificationFailure******************
+2017-05-28 02:06:26 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:06:26 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:06:26 ERROR TestListenerAdapter:30 - Test Failed, Setting Test Result to FAILED
+2017-05-28 02:06:27 INFO  TestUtil:21 - Checking if suite : RegressionTests is available for execution.
+2017-05-28 02:06:27 INFO  TestUtil:26 - Suite : RegressionTests is available for execution.
+2017-05-28 02:06:27 INFO  TestUtil:50 - Checking if Test Case : RegressionSearchTest is available for execution.
+2017-05-28 02:06:27 INFO  TestUtil:54 - Test Case : RegressionSearchTest is available for execution.
+2017-05-28 02:06:27 INFO  AutomationDataProvider:25 - Providing data for: RegressionSearchTest
+2017-05-28 02:06:27 INFO  RegressionSearchTest:71 -  Executing : RegressionSearchTest
+2017-05-28 02:06:27 INFO  RegressionSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 02:06:27 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 02:06:27 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 02:06:27 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 02:06:32 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:06:32 INFO  RegressionSearchTest:71 -  Executing : RegressionSearchTest
+2017-05-28 02:06:32 INFO  RegressionSearchTest:72 - Chrome -- http://google.com -- hello world
+2017-05-28 02:06:32 INFO  BrowserFactory:32 - Initializing the WebDriver
+2017-05-28 02:06:32 INFO  AutomationDriverLoader:27 - Loading chrome driver...
+2017-05-28 02:06:32 INFO  AutomationDriverLoader:28 - OS | Mac OS X
+2017-05-28 02:06:37 INFO  ErrorHandler:19 - *************addVerificationFailure******************
+2017-05-28 02:06:37 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:06:37 INFO  ErrorHandler:26 - *************getVerificationFailures******************
+2017-05-28 02:06:37 ERROR TestListenerAdapter:30 - Test Failed, Setting Test Result to FAILED
+2017-05-28 02:06:37 INFO  AbstractReportAdapter:19 - *****Abstract Report******
+2017-05-28 02:06:37 INFO  AbstractReportAdapter:28 - Passed tests for suite ' Smoke Suite 1.0' is:1
+2017-05-28 02:06:37 INFO  AbstractReportAdapter:30 - Failed tests for suite ' Smoke Suite 1.0' is:1
+2017-05-28 02:06:37 INFO  AbstractReportAdapter:32 - Skipped tests for suite ' Smoke Suite 1.0' is:0
+2017-05-28 02:06:37 INFO  AbstractReportAdapter:34 - *****End of Report******
+2017-05-28 02:06:37 INFO  AbstractReportAdapter:28 - Passed tests for suite ' Regression 1.0' is:1
+2017-05-28 02:06:37 INFO  AbstractReportAdapter:30 - Failed tests for suite ' Regression 1.0' is:1
+2017-05-28 02:06:37 INFO  AbstractReportAdapter:32 - Skipped tests for suite ' Regression 1.0' is:0
+2017-05-28 02:06:37 INFO  AbstractReportAdapter:34 - *****End of Report******

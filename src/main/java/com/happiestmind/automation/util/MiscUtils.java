@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+import java.util.UUID;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -18,6 +20,9 @@ import org.testng.SkipException;
 
 import com.happiestmind.automation.domain.AfterMethodAssessmentProperties;
 import com.happiestmind.automation.domain.AfterTestAssessmentProperties;
+import com.happiestmind.automation.errorhandler.ExtentErrorHandler;
+import com.happiestmind.automation.exception.ComparisonFailureCustomException;
+import com.happiestmind.automation.exception.ParameterReaderCustomException;
 import com.happiestmind.automation.loaders.PropertiesLoader;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -41,6 +46,11 @@ public class MiscUtils {
 
 	}
 
+	public static void pauseForElementToBePresent(Long millis) throws InterruptedException {
+		LOG.debug("Pausing for element to be present :" + millis);
+		Thread.sleep(millis);
+	}
+
 	/**
 	 * 
 	 * @param element
@@ -48,33 +58,83 @@ public class MiscUtils {
 	 * @throws Exception
 	 * @throws InterruptedException
 	 */
-	public static void isElementPresent(WebElement element, WebDriver driver, ExtentTest extentLogger,
-			ExtentReports extent,String step) throws Exception {
+	public static boolean isElementPresent(WebElement element, WebDriver driver, ExtentTest extentLogger,
+			ExtentReports extent) {
 		int counter = 0;
+		int countProp = 0;
+		boolean isElementPresent = true;
 
 		try {
-			while (!element.isDisplayed() && !element.isEnabled()) {
+			while (!element.isEnabled()) {
 				driverSync(driver);
 				LOG.info("Polling for the element" + element + "| retry no." + counter);
 				counter++;
-				if (counter == Integer.parseInt(PropertiesLoader.loadConfigurations().getProperty("max.retries"))) {
-					extentLogger.log(LogStatus.FATAL, "Required WebElement: " + element.getText() + "  Not found");
+
+				if (PropertiesLoader.loadConfigurations().getProperty("max.retries") == null) {
+					countProp = defaultWaitCounter();
+
+				} else {
+					countProp = Integer.parseInt(PropertiesLoader.loadConfigurations().getProperty("max.retries"));
+				}
+
+				if (counter == countProp) {
+					isElementPresent = false;
 					driver.quit();
-					extent.endTest(extentLogger);
 					break;
 				}
 
 			}
-			extentLogger.log(LogStatus.PASS,step);
 		} catch (Exception e) {
 			LOG.fatal("FATAL Error closing the quitting browser, ending Test");
 			LOG.error("Caused By:" + e.getMessage());
-			extentLogger.log(LogStatus.FATAL, "Required WebElement: " + element.getText() + "  Not found");
 			driver.quit();
-			extent.endTest(extentLogger);
-			throw e;
+			isElementPresent = false;
 
 		}
+		return isElementPresent;
+	}
+
+	/**
+	 * 
+	 * @param element
+	 * @param driver
+	 * @throws Exception
+	 * @throws InterruptedException
+	 */
+	public static boolean isElementPresent(List<WebElement> elements, WebDriver driver, ExtentTest extentLogger,
+			ExtentReports extent) {
+		int counter = 0;
+		int countProp = 0;
+		boolean isElementPresent = true;
+
+		try {
+			for (WebElement element : elements) {
+				while (!element.isDisplayed()) {
+					driverSync(driver);
+					LOG.info("Polling for the element" + element + "| retry no." + counter);
+					counter++;
+					if (PropertiesLoader.loadConfigurations().getProperty("max.retries") == null) {
+						countProp = defaultWaitCounter();
+
+					} else {
+						countProp = Integer.parseInt(PropertiesLoader.loadConfigurations().getProperty("max.retries"));
+					}
+
+					if (counter == countProp) {
+						isElementPresent = false;
+						driver.quit();
+						break;
+					}
+				}
+			}
+		} catch (Exception e) {
+			LOG.fatal("FATAL Error closing the quitting browser, ending Test");
+			LOG.error("Caused By:" + e.getMessage());
+			driver.quit();
+			isElementPresent = false;
+
+		}
+		return isElementPresent;
 	}
 
 	/***
@@ -88,7 +148,7 @@ public class MiscUtils {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		String dest = System.getProperty(AutomationConstants.USER_DIR) + AutomationConstants.SCREENSHOT_FOLDER
-				+ testCaseName + "_" + getCurrentDateAndTime() + AutomationConstants.PNG;
+				+ testCaseName + "_" + getCurrentDateAndTime()+"_"+UUID.randomUUID() + AutomationConstants.PNG;
 		File destination = new File(dest);
 		FileUtils.copyFile(source, destination);
 		return dest;
@@ -139,8 +199,8 @@ public class MiscUtils {
 					AutomationConstants.PASS);
 
 		if (ta.getResult().getStatus() == ITestResult.FAILURE) {
-			ta.getExtentLogger().log(LogStatus.INFO, "Test Case Failed is " + ta.getResult().getName());
-			ta.getExtentLogger().log(LogStatus.INFO, "Test Case Failed is " + ta.getResult().getThrowable());
+			ta.getExtentLogger().log(LogStatus.FAIL, "Test Case Failed: ", ta.getResult().getName());
+			ta.getExtentLogger().log(LogStatus.FAIL, "Failure Cause: " + ta.getResult().getThrowable());
 		} else if (ta.getResult().getStatus() == ITestResult.SKIP) {
 			ta.getExtentLogger().log(LogStatus.SKIP, "Test Case Skipped is " + ta.getResult().getName());
 		}
@@ -153,8 +213,9 @@ public class MiscUtils {
 	 * 
 	 * @param AfterTestAssessmentProperties
 	 *            ta
+	 * @throws ParameterReaderCustomException
 	 */
-	public static void afterTestAssessment(AfterTestAssessmentProperties ta) {
+	public static void afterTestAssessment(AfterTestAssessmentProperties ta) throws ParameterReaderCustomException {
 
 		if (ta.isTestPass()) {
 			TestUtil.reportDataSetResult(ta.getSuiteObject(), "Test Cases",
@@ -175,43 +236,36 @@ public class MiscUtils {
 	 * @param ExtentTest
 	 *            extentLogger
 	 * @param step
+	 * @throws ComparisonFailureCustomException
 	 */
-	public static void assertion(Object actual, Object expected, ExtentTest extentLogger, String step) {
+	public static void assertion(WebDriver driver, Object actual, Object expected, ExtentTest extentLogger,
+			String className, String step) throws ComparisonFailureCustomException {
+		try {
+			Assert.assertEquals(actual, expected);
+			ExtentSucessLogger.assertionSuccess(actual, expected, extentLogger, step);
+//			extentLogger.log(LogStatus.PASS, "Step:" + step + ".", "Comparison between " + actual + " and " + expected);
+		} catch (Throwable e) {
 
-		Assert.assertEquals(actual, expected);
-		extentLogger.log(LogStatus.PASS, "Step:" + step + ".", "Comparison between " + actual + " and " + expected);
+			try {
+				ExtentErrorHandler.assertionExceptionHandler(actual, expected, extentLogger, step, driver, className, e);
+			} catch (IOException e1) {
+				throw new ComparisonFailureCustomException(e1.getCause());
 
+			}
+
+		}
 	}
 
-	/***
-	 * 
-	 * @param actual
-	 * @param expected
-	 * @param ExtentTest
-	 *            extentLogger
-	 * @param step
-	 * @param WebDriver
-	 *            driver
-	 * @param className
-	 * @param Throwable
-	 *            t
-	 * @throws IOException
-	 */
-	public static void assertionExceptionHandler(Object actual, Object expected, ExtentTest extentLogger, String step,
-			WebDriver driver, String className, Throwable t) throws IOException {
-
-		extentLogger.log(LogStatus.FAIL, "Step: " + step + ".", "Comparison between " + actual + " and " + expected);
-		extentLogger.log(LogStatus.INFO, "Snapshot for failed step is given below [Click it for full view]: "
-				+ extentLogger.addScreenCapture(MiscUtils.selfie(driver, className)));
-		ErrorHandler.setVerificationFailure(t);
-	}
+	
 
 	/***
 	 * 
 	 * @param suiteObject
 	 * @param className
+	 * @throws ParameterReaderCustomException
 	 */
-	public static void beforeTestRunmodeCheckUp(ParameterReader suiteObject, String className) {
+	public static void beforeTestRunmodeCheckUp(ParameterReader suiteObject, String className)
+			throws ParameterReaderCustomException {
 		if (!TestUtil.isTestCaseRunnable(suiteObject, className)) {
 			throw new SkipException("Skipping Test Case" + className + " as runmode set to NO");
 		}
@@ -222,22 +276,20 @@ public class MiscUtils {
 	 * @param ExtentReports
 	 *            extent
 	 * @return ExtentReports
+	 * @throws IOException 
 	 */
-	public static ExtentReports getExtentObject(ExtentReports extent) {
-		extent = new ExtentReports(AutomationConstants.extentReportFile, true);
+	public static ExtentReports getExtentObject(ExtentReports extent, String suiteName) throws IOException {
+		//FileUtils.forceMkdir(new File(AutomationConstants.extentReportFile+File.pathSeparator+UUID.randomUUID()));
+		extent = new ExtentReports(AutomationConstants.extentReportFile+suiteName+"_"+MiscUtils.getCurrentDateAndTime()+"_"+UUID.randomUUID()+"/"+suiteName+"TestReport_"
+				+ MiscUtils.getCurrentDateAndTime() +"_"+".html", true);
 		extent.addSystemInfo(getSystemInfo());
 		extent.loadConfig(new File(AutomationConstants.configXmlLocation));
 		return extent;
 	}
 
-	public static boolean elementNotFoundErrorHandler(WebDriver driver, ExtentTest extentLogger, ExtentReports extent,
-			String className, String step) throws IOException {
-		selfie(driver, className);
-		extentLogger.log(LogStatus.FATAL, "Step:"+step+".", "Test step failed due to WebElement related exception.");
-		driver.quit();
-		extent.endTest(extentLogger);
-		return false;
+	
 
+	private static int defaultWaitCounter() {
+		return 30;
 	}
-
 }

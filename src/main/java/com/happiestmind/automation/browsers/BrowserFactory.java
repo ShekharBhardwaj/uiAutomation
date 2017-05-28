@@ -2,7 +2,6 @@ package com.happiestmind.automation.browsers;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.NotImplementedException;
 import org.apache.log4j.Logger;
@@ -18,7 +17,6 @@ public class BrowserFactory {
 
 	final static Logger LOG = Logger.getLogger(BrowserFactory.class);
 	private static WebDriver driver;
-	
 
 	/****
 	 * 
@@ -40,9 +38,8 @@ public class BrowserFactory {
 		} else if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", AutomationDriverLoader.loadChromeDriver());
 			driver = new ChromeDriver();
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		} else if (browser.equalsIgnoreCase("ie")) {
-			
+
 			throw new NotImplementedException("IE is not implemented yet");
 
 		} else if (browser.equalsIgnoreCase("safari")) {
@@ -50,10 +47,9 @@ public class BrowserFactory {
 			throw new NotImplementedException("safari is not implemented yet");
 
 		}
-
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(url);
-
 		return driver;
 
 	}

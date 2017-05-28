@@ -1,5 +1,7 @@
 package com.happiestmind.automation.suite.smoke;
 
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -15,6 +17,10 @@ import com.happiestmind.automation.browsers.BrowserFactory;
 import com.happiestmind.automation.dataprovider.AutomationDataProvider;
 import com.happiestmind.automation.domain.AfterMethodAssessmentProperties;
 import com.happiestmind.automation.domain.AfterTestAssessmentProperties;
+import com.happiestmind.automation.errorhandler.ErrorHandler;
+import com.happiestmind.automation.errorhandler.ExtentErrorHandler;
+import com.happiestmind.automation.exception.AutomationDataProviderCustomException;
+import com.happiestmind.automation.exception.ParameterReaderCustomException;
 import com.happiestmind.automation.pagefactory.GoogleSearchPage;
 import com.happiestmind.automation.util.MiscUtils;
 import com.happiestmind.automation.util.TestUtil;
@@ -23,6 +29,12 @@ import com.relevantcodes.extentreports.LogStatus;
 public class GoogleSearchTest extends SmokeSuiteBaseImpl {
 
 	final static Logger LOG = Logger.getLogger(GoogleSearchTest.class);
+	
+	private final static String TESTCASE="Starting Smoke Google Search Test";
+	private final static String STEP1="Searching the word";
+	private final static String STEP2="Clicking search icon";
+	private final static String STEP3="Compairing page title";
+
 
 	String runmodes[] = null;
 	static int count = -1;
@@ -34,21 +46,21 @@ public class GoogleSearchTest extends SmokeSuiteBaseImpl {
 	// Runmode of test case in a suite
 	@BeforeTest
 	public void checkTestSkip() {
+		try {
+			MiscUtils.beforeTestRunmodeCheckUp(smokeSuite, className);
+			runmodes = TestUtil.getDataSetRunmodes(smokeSuite, className);
+		} catch (ParameterReaderCustomException e) {
+			e.printStackTrace();
+		}
 
-		MiscUtils.beforeTestRunmodeCheckUp(smokeSuite, className);
-		// load the runmodes off the tests
-		runmodes = TestUtil.getDataSetRunmodes(smokeSuite, className);
-		extent = MiscUtils.getExtentObject(extent);
-		
 	}
 
 	@Test(dataProvider = "getTestData")
-	public void googleSerahcTest(String browser, String uri, String searchWord, String title)
-			throws Exception {
+	public void googleSearchTest(String browser, String uri, String searchWord, String title) throws Exception {
 
-		extentLogger = extent.startTest("Starting Google Search Test");
+		extentLogger = extent.startTest(TESTCASE);
 		// test the runmode of current dataset
-		String pagetitle;
+		String pagetitle = null;
 		count++;
 		if (!runmodes[count].equalsIgnoreCase("Y")) {
 			skip = true;
@@ -59,25 +71,24 @@ public class GoogleSearchTest extends SmokeSuiteBaseImpl {
 		LOG.info(" Executing : " + className);
 		LOG.info(browser + " -- " + uri + " -- " + searchWord);
 
-		WebDriver driver = BrowserFactory.startBrowser(browser, uri);
-
-		GoogleSearchPage googleSearchPage = PageFactory.initElements(driver, GoogleSearchPage.class);
-		
-		try {
-		googleSearchPage.search(searchWord, extentLogger, extent, "Searching the word");
-		} catch (Exception e){
-			isTestPass = MiscUtils.elementNotFoundErrorHandler(driver,extentLogger,extent,className, "Searching the word");
-			throw e;
-		}
-
-		pagetitle = driver.getTitle();
+		WebDriver driver = null;
 
 		try {
-			MiscUtils.assertion(pagetitle, title, extentLogger, "Compairing Page titles");
+
+			driver = BrowserFactory.startBrowser(browser, uri);
+			GoogleSearchPage googleSearchPage = PageFactory.initElements(driver, GoogleSearchPage.class);
+			
+			//Step 1
+			googleSearchPage.searchTextEnter(searchWord, extentLogger, extent, STEP1, className);
+			
+			//Step 2
+			googleSearchPage.clickSearchIcon(extentLogger, extent, STEP2, className);
+			
+			//Step 3
+			pagetitle = driver.getTitle();
+			MiscUtils.assertion(driver, pagetitle, title, extentLogger, className, STEP3);
 		} catch (Throwable t) {
-			MiscUtils.assertionExceptionHandler(pagetitle, title, extentLogger, "Compairing Page titles", driver,
-					className, t);
-			// report the error in xls files
+			ErrorHandler.setVerificationFailure(t);
 			fail = true;
 			extent.endTest(extentLogger);
 			driver.quit();
@@ -111,12 +122,22 @@ public class GoogleSearchTest extends SmokeSuiteBaseImpl {
 		testAssessment.setClassName(className);
 		testAssessment.setExtent(extent);
 		testAssessment.setSuiteObject(smokeSuite);
-		MiscUtils.afterTestAssessment(testAssessment);
+		try {
+			MiscUtils.afterTestAssessment(testAssessment);
+		} catch (ParameterReaderCustomException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@DataProvider
-	public Object[][] getTestData() {
-		return AutomationDataProvider.getData(smokeSuite, className);
+	public Object[][] getTestData() throws IOException {
+		try {
+			return AutomationDataProvider.getData(smokeSuite, className);
+		} catch (AutomationDataProviderCustomException e) {
+			ExtentErrorHandler.dataProviderErrHandler(e, extent, extentLogger, TESTCASE, "SmokeSuite");
+		}
+		return null;
 	}
 
 }

@@ -9,7 +9,9 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.internal.Utils;
 
-import com.happiestmind.automation.util.ErrorHandler;
+import com.happiestmind.automation.errorhandler.ErrorHandler;
+
+
 
 public class TestListenerAdapter implements IInvokedMethodListener {
 	

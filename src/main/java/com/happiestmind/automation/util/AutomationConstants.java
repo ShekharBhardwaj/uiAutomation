@@ -2,8 +2,7 @@ package com.happiestmind.automation.util;
 
 public class AutomationConstants {
 
-	public static final String extentReportFile = System.getProperty("user.dir") + "/extentreports/extentTestReport_"
-			+ MiscUtils.getCurrentDateAndTime() + ".html";
+	public static final String extentReportFile = System.getProperty("user.dir") + "/extentreports/";
 	public static final String extentReportImage = System.getProperty("user.dir")
 			+ "/extentreports/extentReportImage.png";
 	public static final String configXmlLocation = System.getProperty("user.dir")

@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name=" Regression 1.0">
+
+	<test name="Google Search Test2">
+		<classes>
+			<class name="com.happiestmind.automation.suite.regression.RegressionSearchTest"></class>
+		</classes>
+	</test>
+
+
+
+</suite>
+
