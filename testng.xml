@@ -6,6 +6,6 @@
 	</listeners>
 	<suite-files>
 		<suite-file path="./SmokeTest_1_0.xml" />
-		<suite-file path="./SmokeTest_1_1.xml" />
+		 <suite-file path="./SmokeTest_1_1.xml" />
 	</suite-files>
 </suite>

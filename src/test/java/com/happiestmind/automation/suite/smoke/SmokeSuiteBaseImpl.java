@@ -17,22 +17,22 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 public class SmokeSuiteBaseImpl extends XlsSheetsLoader {
 
-	ExtentReports extent;
+	static ExtentReports extent;
 	ExtentTest extentLogger;
 
 	@BeforeSuite
-	public void checkSuiteSkip() throws ParameterReaderCustomException, SheetLoaderCustomException, IOException  {
+	public void checkSuiteSkip() throws ParameterReaderCustomException, SheetLoaderCustomException, IOException {
 		initialize();
 		if (!TestUtil.isSuiteRunnable(parentSuite, "SmokeTests")) {
 			throw new SkipException("RUnmode of SmokeTests Suite set to N. So Skipping all tests in SmokeTests Suite");
-		} else {
-			extent = MiscUtils.getExtentObject(extent, "SmokeSuite");
 		}
+		extent = MiscUtils.getExtentObject(extent, "SmokeSuite");
 
 	}
 
 	@AfterSuite
 	public void closeConnections() throws Exception {
+		extent.flush();
 		extent.close();
 	}
 

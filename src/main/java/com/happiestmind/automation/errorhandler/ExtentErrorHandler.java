@@ -94,7 +94,7 @@ public class ExtentErrorHandler {
 				"Required WebElement: " + element.getText() + "  Not found");
 		extentLogger.log(LogStatus.INFO, "Snapshot for failed step is given below [Click it for full view]: "
 				+ extentLogger.addScreenCapture(MiscUtils.selfie(driver, className)));
-		driver.quit();
+//		driver.quit();
 		extent.endTest(extentLogger);
 		extent.endTest(extentLogger);
 	}

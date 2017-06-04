@@ -7,6 +7,16 @@
   </listeners>
   <test name="Google Search Test1(failed)">
     <classes>
+      <class name="com.happiestmind.automation.suite.smoke.GoogleSearch1Test">
+        <methods>
+          <include name="reportDataSetResult"/>
+          <include name="checkSuiteSkip"/>
+          <include name="closeConnections"/>
+          <include name="reportTestResult"/>
+          <include name="googleSearchTest"/>
+          <include name="checkTestSkip"/>
+        </methods>
+      </class> <!-- com.happiestmind.automation.suite.smoke.GoogleSearch1Test -->
       <class name="com.happiestmind.automation.suite.smoke.GoogleSearchTest">
         <methods>
           <include name="checkSuiteSkip"/>

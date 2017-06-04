@@ -4,6 +4,7 @@
 	<test name="Google Search Test1">
 		<classes>
 			<class name="com.happiestmind.automation.suite.smoke.GoogleSearchTest"></class>
+			<class name="com.happiestmind.automation.suite.smoke.GoogleSearch1Test"></class>
 		</classes>
 	</test>
 

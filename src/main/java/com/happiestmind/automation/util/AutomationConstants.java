@@ -12,7 +12,7 @@ public class AutomationConstants {
 	public static final String SKIP = "SKIP";
 	public static final String YYYY_MM_DD_HH_MM_SS="yyyy_MM_dd_HH_mm_ss";
 	public static final String PNG=".png";
-	public static final String SCREENSHOT_FOLDER="/screenshots/";
+	public static final String SCREENSHOT_FOLDER="/extentreports/screenshots/";
 	public static final String USER_DIR="user.dir";
 	public static final String COMPANY="Company";
 	public static final String ENVIRONMENT="Environment";

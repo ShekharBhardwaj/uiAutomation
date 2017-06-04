@@ -225,7 +225,7 @@ public class MiscUtils {
 					TestUtil.getRowNum(ta.getSuiteObject(), ta.getClassName()), AutomationConstants.FAIL);
 		}
 
-		ta.getExtent().flush();
+		//ta.getExtent().flush();
 
 	}
 
@@ -292,4 +292,6 @@ public class MiscUtils {
 	private static int defaultWaitCounter() {
 		return 30;
 	}
+
+	
 }
